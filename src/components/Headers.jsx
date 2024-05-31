@@ -2,7 +2,7 @@ import React from 'react'
 import { HiHome ,HiMagnifyingGlass, HiStar , HiPlayCircle , HiTv} from "react-icons/hi2";
 import { HiPlus , HiDotsVertical} from "react-icons/hi";
 import HeaderItem from './HeaderItem.jsx'
-import logo from "../assets/Disneyplus.avif"
+import logo from "../assets/After_(film)_logo.png"
 import avatar from "../assets/pngwing.com.png"
 
 export default function header() {

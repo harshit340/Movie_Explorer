@@ -1,9 +1,11 @@
-import mongoose from "mongoose";
-import { connect , disconnect} from "mongoose";
+//const mongoose = require("mongoose");
+ const { connect , disconnect} = require ("mongoose");
 
 async function connecttodatabase(){
     try {
-        await connect(process.env.MONGODB_URL);
+      const mongoUrl = process.env.MONGODB_URL;
+      
+        await connect(mongoUrl);
         console.log("connected")
     } catch (error) {
       console.log(error);
@@ -21,4 +23,4 @@ async function disconnecttodatabase(){
     }
 }
 
-export{ connecttodatabase , disconnecttodatabase}
+module.exports={ connecttodatabase , disconnecttodatabase};

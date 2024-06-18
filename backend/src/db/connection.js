@@ -1,5 +1,5 @@
 //const mongoose = require("mongoose");
-const { connect , disconnect} = require ("mongoose");
+ const { connect , disconnect} = require ("mongoose");
 
 async function connecttodatabase(){
     try {

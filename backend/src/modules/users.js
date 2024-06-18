@@ -1,5 +1,5 @@
 //write schema here
-const mongoose = require("mongoose");
+ const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema({
  username:{
@@ -17,7 +17,7 @@ const userSchema = new mongoose.Schema({
     required : true,
     
  },
-age:{
+age :{
     type:Number,
     required:true,
 },

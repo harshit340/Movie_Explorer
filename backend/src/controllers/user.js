@@ -1,4 +1,4 @@
-const user = require("../modules/users");
+const user =  require("../modules/users");
 
 
 /*const signupPage = async(req,res)=>{

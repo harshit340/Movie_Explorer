@@ -1,12 +1,16 @@
+/* eslint-disable react-hooks/rules-of-hooks */
+
 import React from 'react'
 import { HiHome ,HiMagnifyingGlass, HiStar , HiPlayCircle , HiTv} from "react-icons/hi2";
 import { HiPlus , HiDotsVertical} from "react-icons/hi";
 import HeaderItem from './HeaderItem.jsx'
 import logo from "../assets/After_(film)_logo.png"
 import avatar from "../assets/pngwing.com.png"
+import { Link ,useNavigate} from 'react-router-dom';
 
 export default function header() {
   const[toggle,settoggle] = React.useState(false);
+  const[LoginStatus,setLoginStatus] = React.useState(false);
   const menu=[
     {
       name:'HOME',
@@ -38,6 +42,10 @@ export default function header() {
     }, 
    
   ]
+  const navigate = useNavigate();
+  const navigateToSignin = () => {
+    navigate('/signin');
+  };
   return (
     <div className="flex justify-between p-[8px]">
       <div className="flex items-center gap-8 ">
@@ -62,7 +70,9 @@ export default function header() {
       </div>
       </div>
       </div>
-      <img src={avatar} className="w-[50px] rounded-full"></img>
+      {LoginStatus?<><img src={avatar} className="w-[50px] rounded-full"></img></>:<> <button style={{ color:"white", display:"flex" , flexDirection:"column",justifyItems:"center",fontSize:"20px",fontWeight:"500",marginRight:"20px"}}onClick={navigateToSignin} >Login</button></>}
+     
+      
     </div>
   )
 }

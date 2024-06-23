@@ -1,18 +1,20 @@
-import './App.css'
-import GenreMovieList from './components/GenreMovieList.jsx'
-import Header from './components/Headers.jsx'
-import Production from './components/Production.jsx'
-import Slider from './components/Slider.jsx'
+import Home from './Home';
+import Signin from './components/Signin.jsx';
+import SignUp from './signup/Signup.jsx'
+import {  Route, Routes } from 'react-router-dom';
+
 function App() {
  
 
   return (
     
        <div >
-        <Header/>
-        <Slider/>
-        <Production/>
-        <GenreMovieList/>
+       
+        <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/signin" element={<Signin/>} />
+        <Route path="/signup" element={<SignUp/>} />
+        </Routes>
        </div>
     
   )

@@ -1,0 +1,34 @@
+body{
+    background-image: url('../assets/4508662-stars-backgrounds.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.input-label{
+    color:rgba(255, 255, 255, 0.96);
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.signup-align{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.heading-align{
+    margin-top: 80px;
+}
+
+.input-style{
+  color: white;
+}
+.input-style:hover{
+  color: black;
+}
+
+.input-style:focus { 
+    color:black;
+  }

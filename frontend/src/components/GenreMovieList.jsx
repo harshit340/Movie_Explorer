@@ -3,6 +3,7 @@ import GenresList from '../Constant/GenresList'
 import MovieList from './MovieList'
 
 
+
 export default function GenreMovieList() {
   return (
     <div>

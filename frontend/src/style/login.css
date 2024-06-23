@@ -1,101 +1,85 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
-*{
-    color:white;
-}
-
-.Login-card{
-   background-color: #1B2730;
-   border:none;
-   margin:70px 0 0 0;
-   width: 600px;
-   height: 500px;
-   padding:20px;
-   
-   
-}
-
-.header-style{
-    display: flex;
-    justify-content: space-between;
-    
-}
-
-
-
-.main-style{
-    display: flex;
-    padding-top: 10px;
-    padding-bottom: 20px;
-   justify-content: space-evenly;
-    
-   
-  
-    
-}   
-
-
-.dish-style{
-    width:400px;
-}
-
-.heading-style{
-    font-size: 90px;
-    font-family: "Dancing Script", cursive;
-    color:wheat;
-    padding-top: 50px;
-    padding-bottom: 30px;
-}
-
-
-@media(max-width: 769px){
-    .dish-style{
-        width:300px;
-    }
-    
-    .heading-style{
-        font-size: 80px;
-        font-family: "Dancing Script", cursive;
-    }
-    .main-style{
-        display:flex;
-        justify-content: space-evenly;
-    }
-    
-}
-
-
-@media(max-width: 480px){
-    .Login-card{
-    background-color: #1B2730;
-    border:none;
-   
-    width: auto;
-    height: 600px;
-    
-    
-    }
-    .typo-part{
-        display: none;
-    }
-     
-}
-
-.button-google{
-    
-   
-    display: flex;
-    text-align: center;
-    text-transform: uppercase;
-    justify-content: center;
-    vertical-align: middle;
-    align-items: center;
-    cursor: pointer;
-    background-color:wheat ;
-    color:#1B2730;
-
-    
+.page-background {
+    background-image: url('../assets/4508662-stars-backgrounds.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Ensure it is behind all other content */
   }
   
+  .main-form {
   
+    max-width: 1000px;
+    height: 70vh;
+    margin: auto;
+    margin-top: 150px;
+    border-radius: 2rem;
+   
+  }
 
+  .button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+  }
   
+  .title {
+    font-size: 34px;
+    font-weight: bold;
+    color: #ffffff; /* White color */
+    display: flex;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .subtitle{
+    font-size: 19px;
+      color: #b0b0b0;
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      justify-content: center;
+  }
+  
+  .input-field {
+    margin: 100px 200px 200px 200px;
+    color: white;
+  }
+  
+  .input-style {
+    background-color: transparent;
+    height: 40px;
+  }
+  button{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+  }
+  .shadow__btn {
+    padding: 10px 20px;
+    border: none;
+    font-size: 17px;
+    color: #fff;
+    border-radius: 7px;
+    letter-spacing: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: 0.5s;
+    transition-property: box-shadow;
+  }
+  
+  .shadow__btn {
+    background: rgb(0,140,255);
+    box-shadow: 0 0 25px rgb(0,140,255);
+  }
+  
+  .shadow__btn:hover {
+    box-shadow: 0 0 5px rgb(0,140,255),
+                0 0 25px rgb(0,140,255),
+                0 0 50px rgb(0,140,255),
+                0 0 100px rgb(0,140,255);
+  }

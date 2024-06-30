@@ -1,7 +1,7 @@
-//const mongoose = require("mongoose");
- const { connect , disconnect} = require ("mongoose");
+import mongoose from "mongoose";
+ import { connect , disconnect} from "mongoose";
 
-async function connecttodatabase(){
+  export async function connecttodatabase(){
     try {
       const mongoUrl = process.env.MONGODB_URL;
       
@@ -13,7 +13,7 @@ async function connecttodatabase(){
     }
 }
 
-async function disconnecttodatabase(){
+ export async function disconnecttodatabase(){
     try {
         await disconnect();
         console.log("disconnected")
@@ -23,4 +23,3 @@ async function disconnecttodatabase(){
     }
 }
 
-module.exports={ connecttodatabase , disconnecttodatabase};

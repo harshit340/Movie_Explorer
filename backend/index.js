@@ -1,16 +1,16 @@
 
-process.env.MONGODB_URL =  'mongodb://localhost:27017/users';
+import dotenv from 'dotenv';
+dotenv.config();
+import mongoose from "mongoose";
+import {app} from "./app.js" 
 
-const  express =require("express") ;
-const users = require("../backend/src/modules/users");
-const {connecttodatabase , disconnecttodatabase} =require("../backend/src/db/connection");
-const router = require("../backend/src/routes/user")
-const app = express();
-const PORT=8001;
-app.use(express.urlencoded({extended:false}));
-app.use(express.json());
+import { connecttodatabase , disconnecttodatabase } from "../backend/src/db/connection.js";
+import  router  from "../backend/src/routes/user.js";
 
-app.use("/user",router);
+
+
+const PORT=8009;
+
 
 async function startServer() {
     try {

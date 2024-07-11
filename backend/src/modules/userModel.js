@@ -1,5 +1,5 @@
 //write schema here
- const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema({
  username:{
@@ -7,21 +7,16 @@ const userSchema = new mongoose.Schema({
     required : true,
     unique:true,
  },
- firstname:{
-    type:String, 
-    required : true,
-    
- },
- lastname:{
+email:{
     type:String,
-    required : true,
-    
- },
-age :{
-    type:Number,
     required:true,
 },
 password:{
+    type:String,
+    required:true,
+    unique:true,
+},
+confirm_password:{
     type:String,
     required:true,
     unique:true,
@@ -29,6 +24,6 @@ password:{
 
 });
 
-const users = mongoose.model("users",userSchema);
+const userModel = mongoose.model("user",userSchema);
 
-module.exports = users;
+export default userModel;

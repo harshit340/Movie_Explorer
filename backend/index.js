@@ -1,42 +1,20 @@
-
-process.env.MONGODB_URL =  'mongodb://localhost:27017/users';
-
-const  express =require("express") ;
-const users = require("../backend/src/modules/users");
-const {connecttodatabase , disconnecttodatabase} =require("../backend/src/db/connection");
-const router = require("../backend/src/routes/user")
+import express from "express";
+import { connecttodatabase } from "../backend/src/db/connection.js";
+import router from "./src/routes/userRoutes.js";
+import "dotenv/config"
+import cors from "cors"
 const app = express();
-const PORT=8001;
+const PORT=3000;
+app.use(cors())
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
 
-app.use("/user",router);
+app.use("/api/user",router);
 
-async function startServer() {
-    try {
-        await connecttodatabase();
-        app.listen(PORT, () => {
-            console.log(`Server running at port ${PORT}`);
-        });
-    } catch (error) {
-        console.error("Failed to start server:", error);
-    }
-}
-
-
-
-
-process.on('SIGINT', async () => {
-    try {
-        await disconnecttodatabase();
-        process.exit(0);
-    } catch (error) {
-        console.error("Failed to disconnect from database:", error);
-        process.exit(1);
-    }
-});
-
-startServer();
+connecttodatabase();
+app.listen(PORT,()=>{
+    console.log(`server is running on ${PORT}`);
+})
 
 
 

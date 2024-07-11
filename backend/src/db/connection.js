@@ -1,26 +1,19 @@
-//const mongoose = require("mongoose");
- const { connect , disconnect} = require ("mongoose");
+// connection.js
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
 
-async function connecttodatabase(){
-    try {
-      const mongoUrl = process.env.MONGODB_URL;
-      
-        await connect(mongoUrl);
-        console.log("connected")
-    } catch (error) {
-      console.log(error);
-      throw new Error("not connected to mongodb")   
-    }
-}
+dotenv.config();
 
-async function disconnecttodatabase(){
-    try {
-        await disconnect();
-        console.log("disconnected")
-    } catch (error) {
-      console.log(error);
-      throw new Error("not able to  disconnected to mongodb")   
-    }
-}
+const connecttodatabase = async () => {
+  try {
+    await mongoose.connect("mongodb+srv://harshit340:hllMTFSPOgLVlppO@cluster0.4cfnw1v.mongodb.net/movie");
+    console.log('Connected to MongoDB');
+  } catch (error) {
+    console.error('Failed to connect to MongoDB', error);
+    throw error;
+  }
+};
 
-module.exports={ connecttodatabase , disconnecttodatabase};
+
+export { connecttodatabase};
+

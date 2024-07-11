@@ -6,11 +6,12 @@ import { HiPlus , HiDotsVertical} from "react-icons/hi";
 import HeaderItem from './HeaderItem.jsx'
 import logo from "../assets/After_(film)_logo.png"
 import avatar from "../assets/pngwing.com.png"
-import { Link ,useNavigate} from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
 
-export default function header() {
+export default function header({ LoginStatus,setLoginStatus }) {
   const[toggle,settoggle] = React.useState(false);
-  const[LoginStatus,setLoginStatus] = React.useState(false);
+  const[logout,setlogout] = React.useState(false);
+  
   const menu=[
     {
       name:'HOME',
@@ -25,7 +26,6 @@ export default function header() {
       name:'WATCH LIST',
       icon:HiPlus
     }, 
-   
     {
       name:'STAR',
       icon:HiStar
@@ -40,12 +40,18 @@ export default function header() {
       name:'SERIES',
       icon:HiTv
     }, 
+  
    
   ]
   const navigate = useNavigate();
   const navigateToSignin = () => {
     navigate('/signin');
   };
+
+  const logoutsubmit=()=>{
+    alert("Are you sure you want to leave as")
+    setLoginStatus(false);
+  }
   return (
     <div className="flex justify-between p-[8px]">
       <div className="flex items-center gap-8 ">
@@ -70,7 +76,15 @@ export default function header() {
       </div>
       </div>
       </div>
-      {LoginStatus?<><img src={avatar} className="w-[50px] rounded-full"></img></>:<> <button style={{ color:"white", display:"flex" , flexDirection:"column",justifyItems:"center",fontSize:"20px",fontWeight:"500",marginRight:"20px"}}onClick={navigateToSignin} >Login</button></>}
+      {LoginStatus?<>
+      <div onClick={()=>setlogout(!logout)}  ><img src={avatar} className="w-[50px] rounded-full"></img></div>
+      
+      {logout ? <>
+        <div className="absolute mt-3   p-3 px-5 py-4 " style={{color:"white" ,marginLeft:"89%"}}>
+        <button style={{fontWeight:600}} onClick={logoutsubmit} >Logout</button>
+        </div>
+      </>:null}
+      </>:<> <button style={{ color:"white", display:"flex" , flexDirection:"column",justifyItems:"center",fontSize:"20px",fontWeight:"500",marginRight:"20px"}}onClick={navigateToSignin} >Login</button></>}
      
       
     </div>

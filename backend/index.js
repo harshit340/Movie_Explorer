@@ -1,3 +1,4 @@
+
 import express from "express";
 import { connecttodatabase } from "../backend/src/db/connection.js";
 import router from "./src/routes/userRoutes.js";
@@ -10,6 +11,7 @@ app.use(express.urlencoded({extended:false}));
 app.use(express.json());
 
 app.use("/api/user",router);
+
 
 connecttodatabase();
 app.listen(PORT,()=>{
